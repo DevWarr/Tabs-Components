@@ -20,6 +20,15 @@ class Dropdown {
     
     // Toggle the ".dropdown-hidden" class off and on
     this.content.classList.toggle('dropdown-hidden');
+    if (this.button.style.background === 'white') {
+      this.button.style.background = '#931D25'
+      this.button.style.color = 'white'
+      this.button.style.border = '3px solid white';
+    }  else {
+      this.button.style.background = 'white';
+      this.button.style.color = 'rgb(147,29,37)';
+      this.button.style.border = '3px solid rgb(147,29,37)';
+    }
   }
 }
 
