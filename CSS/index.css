@@ -90,6 +90,44 @@
 .tabs .tabs-link-selected:hover {
   background-color: #ffffff;
 }
+.images {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.images .btn-left {
+  height: 100%;
+  width: 30px;
+  background: black;
+  position: absolute;
+  left: 0;
+}
+.images .btn-left span {
+  color: white;
+  font-weight: bolder;
+  font-size: 2rem;
+  display: block;
+  margin: auto 0;
+}
+.images .btn-right {
+  height: 100%;
+  width: 30px;
+  background: black;
+  position: absolute;
+  right: 0;
+}
+.images .btn-right span {
+  color: white;
+  font-weight: bolder;
+  font-size: 2rem;
+  display: block;
+  margin: auto 0;
+}
+.images .image .image-title {
+  font-size: 24px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
 body {
   box-sizing: border-box;
   min-width: 300px;
@@ -115,12 +153,4 @@ body {
   box-shadow: 1px 1px 5px #931d25;
   border-radius: 10px;
   overflow: hidden;
-}
-.section .box {
-  padding: 40px;
-}
-.section .box .box-title {
-  font-size: 24px;
-  padding-bottom: 10px;
-  font-weight: bold;
 }
