@@ -6,11 +6,9 @@ class Tabs {
     
     // Get the custom data attribute on the Link
     this.data = element.dataset.tab;
-    console.log(this.data);
     
     // Using the custom data attribute get the associated Item element
     this.itemElement = document.querySelector(`.tabs-item[data-tab='${this.data}']`);
-    console.log(this.itemElement);
     
     // Using the Item element, create a new instance of the TabItem class
     // this.tabItem = new TabItem(this.itemElement);
