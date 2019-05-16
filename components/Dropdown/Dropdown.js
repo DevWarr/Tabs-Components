@@ -46,9 +46,15 @@ let dropdowns = document.querySelectorAll('.dropdown').forEach(dropdown => new D
 window.addEventListener('click', dropdownHide);
 
 function dropdownHide() {
+  const button = document.querySelector('.dropdown-button');
   event.stopPropagation();
   dropdown = document.querySelector('.dropdown-content');
   if (!dropdown.classList.contains('dropdown-hidden')) {
     dropdown.classList.add('dropdown-hidden')
   }
+  if (button.style.background === 'white') {
+    button.style.background = '#931D25'
+    button.style.color = 'white'
+    button.style.border = '3px solid white';
+  } 
 }

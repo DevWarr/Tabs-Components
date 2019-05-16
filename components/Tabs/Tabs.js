@@ -1,5 +1,5 @@
 
-class TabLink {
+class Tabs {
   constructor(element) {
     // Assign this.element to the passed in DOM element
     this.element = element;
@@ -13,50 +13,51 @@ class TabLink {
     console.log(this.itemElement);
     
     // Using the Item element, create a new instance of the TabItem class
-    this.tabItem = new TabItem(this.itemElement);
-    
+    // this.tabItem = new TabItem(this.itemElement);
     // Add a click event listener on this instance, calling the select method on click
     this.element.addEventListener('click', () => this.select())
-
   };
 
   select() {
     // Get all of the elements with the tabs-link class
     const links = document.querySelectorAll('.tabs-link');
+    const container = document.querySelector('.tabs-items');
+    const items = document.querySelectorAll('.tabs-item');
+    let open = this.element.classList.contains('tabs-link-selected')
 
-    // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
+    // Using a loop or the forEach method remove the 'selected' class from all of the tabs
     links.forEach(link => {
       link.classList.remove('tabs-link-selected');
     });
-
-    // Add a class named "tabs-link-selected" to this link
-    this.element.classList.add('tabs-link-selected');
-    
-    // Call the select method on the item associated with this link
-    this.tabItem.select();
-
-  }
-}
-
-class TabItem {
-  constructor(element) {
-    // Assign this.element to the passed in element
-    this.element = element;
-  }
-
-  select() {
-    // Select all ".tabs-item" elements from the DOM
-    const items = document.querySelectorAll('.tabs-item');
-
-    // Remove the class "tabs-item-selected" from each element
     items.forEach(item => {
       item.classList.remove('tabs-item-selected');
     });
-    
-    // Add a class named "tabs-item-selected" to this element
-    this.element.classList.add('tabs-item-selected');
+
+    // If the tab is already open, close the tab. 
+    // If the tab is not currently open, switch to that tab
+    container.style.transition = "height 1s";
+    if (!open) {
+      this.element.classList.add('tabs-link-selected');
+      this.itemElement.classList.add('tabs-item-selected');
+      container.style.height = '300px';
+    } else {container.style.height = '10px';}
+    // Call the select method on the item associated with this link
+    // NOW NULL
+
   }
 }
+
+//====================NOW NULL====================//
+// class TabItem {
+//   constructor(element) {
+//     // Assign this.element to the passed in element
+//     this.element = element;
+//   }
+
+//   select() {
+//   }
+// }
+//====================NOW NULL====================//
 
 /* START HERE: 
 
@@ -68,4 +69,4 @@ class TabItem {
 
 */
 
-links = document.querySelectorAll('.tabs-link').forEach(link => new TabLink(link));
+links = document.querySelectorAll('.tabs-link').forEach(link => new Tabs(link));
