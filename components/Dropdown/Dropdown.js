@@ -16,8 +16,9 @@ class Dropdown {
     })
   }
 
+
   toggleContent() {
-    
+    event.stopPropagation();
     // Toggle the ".dropdown-hidden" class off and on
     this.content.classList.toggle('dropdown-hidden');
     if (this.button.style.background === 'white') {
@@ -35,3 +36,19 @@ class Dropdown {
 
 // Nothing to do here, just study what the code is doing and move on to the Dropdown class
 let dropdowns = document.querySelectorAll('.dropdown').forEach(dropdown => new Dropdown(dropdown));
+
+
+
+//==========================STRETCH============================//
+// Click anywhere in the window, and the dropdown menu will close
+
+
+window.addEventListener('click', dropdownHide);
+
+function dropdownHide() {
+  event.stopPropagation();
+  dropdown = document.querySelector('.dropdown-content');
+  if (!dropdown.classList.contains('dropdown-hidden')) {
+    dropdown.classList.add('dropdown-hidden')
+  }
+}
