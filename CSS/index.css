@@ -97,35 +97,26 @@
   min-height: 300px;
 }
 .images .btn-left {
-  height: 100%;
-  width: 50px;
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
   left: 0;
-  cursor: pointer;
-}
-.images .btn-left:hover {
-  background: black;
-}
-.images .btn-left span {
-  color: white;
-  font-weight: bolder;
-  font-size: 4rem;
-  display: block;
-  margin: 100px 0 100px 5px;
 }
 .images .btn-right {
+  right: 0;
+}
+.images .btn {
+  z-index: 50;
   height: 100%;
   width: 50px;
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
-  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   cursor: pointer;
 }
-.images .btn-right:hover {
+.images .btn:hover {
   background: black;
 }
-.images .btn-right span {
+.images .btn span {
   color: white;
   font-weight: bolder;
   font-size: 4rem;
@@ -133,6 +124,7 @@
   margin: 100px 0 100px 5px;
 }
 .images .image {
+  z-index: 0;
   width: 48%;
   margin: 0 auto;
   display: none;

@@ -40,7 +40,7 @@ let dropdowns = document.querySelectorAll('.dropdown').forEach(dropdown => new D
 
 
 //==========================STRETCH============================//
-// Click anywhere in the window, and the dropdown menu will close
+// Click anywhere in the window, and the dropdown menu will close.
 
 
 window.addEventListener('click', dropdownHide);

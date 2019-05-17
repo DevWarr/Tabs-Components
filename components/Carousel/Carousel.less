@@ -4,30 +4,24 @@
     display: flex;
     position: relative;
     min-height: 300px;
-    .btn-left {
-        height: 100%;
-        width: 50px;
-        background: rgba(0, 0, 0, 0.5);
-        position: absolute;
+
+    .btn-left{
         left: 0;
-        cursor: pointer;
-        &:hover {
-            background: black;
-        }
-        span {
-            color: white;
-            font-weight: bolder;
-            font-size: 4rem;
-            display: block;
-            margin: 100px 0 100px 5px;
-        }
     }
-    .btn-right {
+
+    .btn-right{
+        right: 0;
+    }
+    
+    .btn {
+        z-index: 50;
         height: 100%;
         width: 50px;
         background: rgba(0, 0, 0, 0.5);
         position: absolute;
-        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         cursor: pointer;
         &:hover {
             background: black;
@@ -40,9 +34,11 @@
             margin: 100px 0 100px 5px;
         }
     }
+    
 
 
     .image {
+        z-index: 0;
         width: 48%;
         margin: 0 auto;
         display: none;
